@@ -268,12 +268,53 @@ button:hover {
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
+const SUPABASE_URL = "https://midgjijvpbflqkiydusw.supabase.co";
+const SUPABASE_KEY = "sb_publishable_jb8-LpPprcRDyt9M5SYXSg_K6PoxKun";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
 document.getElementById("registrationForm")
-.addEventListener("submit", function(event) {
+.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    document.getElementById("message").style.display = "block";
+    const message = document.getElementById("message");
+    message.style.display = "none";
+
+    const registration = {
+        first_name: document.getElementById("firstName").value.trim(),
+        last_name: document.getElementById("lastName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        university: document.getElementById("university").value.trim(),
+        faculty: document.getElementById("faculty").value.trim(),
+        specialty: document.getElementById("specialty").value.trim(),
+        admission_score: Number(document.getElementById("score").value),
+        azerbaijani: document.getElementById("azerbaijani").value,
+        english: document.getElementById("english").value,
+        other_languages: document.getElementById("otherLanguages").value.trim()
+    };
+
+    const { error } = await supabaseClient
+        .from("registrations")
+        .insert([registration]);
+
+    if (error) {
+        message.textContent = "Qeydiyyat zamanı xəta baş verdi. Yenidən cəhd edin.";
+        message.style.display = "block";
+        console.error(error);
+        return;
+    }
+
+    message.textContent = "Qeydiyyatınız uğurla tamamlandı!";
+    message.style.display = "block";
+
+    document.getElementById("registrationForm").reset();
 });
 </script>
 
