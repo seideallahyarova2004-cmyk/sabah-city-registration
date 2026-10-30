@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SABAH.city | Karyera Sərgisi</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 16px;
+    background: linear-gradient(135deg, #17152f, #30245c, #554080);
+}
+
+.container {
+    max-width: 620px;
+    margin: auto;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px #0004;
+}
+
+.header {
+    background: linear-gradient(110deg, #29204f, #59418d);
+    padding: 35px;
+    color: white;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #bba7ff;
+}
+
+.header h1 {
+    font-size: 23px;
+    margin-top: 22px;
+}
+
+.header p {
+    color: #e1dcef;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.form-content {
+    padding: 35px;
+}
+
+.section-title {
+    color: #30265c;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 25px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9e5f1;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #35334c;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #dedbe8;
+    border-radius: 8px;
+    background: #fcfbfe;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #795ac0;
+    box-shadow: 0 0 0 3px #795ac01a;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background: linear-gradient(110deg, #493582, #8161c7);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+}
+
+.message {
+    display: none;
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #f0ebfb;
+    color: #493582;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer {
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+    padding: 0 20px 25px;
+}
+
+@media(max-width: 500px) {
+    .form-content {
+        padding: 25px 20px;
+    }
+    .header {
+        padding: 28px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">SABAH<span>.city</span></div>
+        <h1>KARYERA SƏRGİSİ</h1>
+        <p>Gələcək karyera imkanlarına ilk addımınızı atın!</p>
+    </div>
+
+    <div class="form-content">
+
+        <form id="registrationForm">
+
+            <div class="section-title">01. Şəxsi məlumatlar</div>
+
+            <div class="form-group">
+                <label for="firstName">Ad *</label>
+                <input id="firstName" name="firstName"
+                       type="text" placeholder="Adınızı daxil edin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Soyad *</label>
+                <input id="lastName" name="lastName"
+                       type="text" placeholder="Soyadınızı daxil edin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Elektron poçt ünvanı *</label>
+                <input id="email" name="email"
+                       type="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Əlaqə nömrəsi *</label>
+                <input id="phone" name="phone"
+                       type="tel" placeholder="+994 XX XXX XX XX" required>
+            </div>
+
+            <div class="section-title">02. Təhsil məlumatları</div>
+
+            <div class="form-group">
+                <label for="university">Universitet *</label>
+                <input id="university" name="university"
+                       type="text" placeholder="Universitetin adını daxil edin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="faculty">Fakültə *</label>
+                <input id="faculty" name="faculty"
+                       type="text" placeholder="Fakültənin adını daxil edin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="specialty">İxtisas *</label>
+                <input id="specialty" name="specialty"
+                       type="text" placeholder="İxtisasınızı daxil edin" required>
+            </div>
+
+            <div class="form-group">
+                <label for="score">Universitetə qəbul balı *</label>
+                <input id="score" name="score"
+                       type="number" min="0" max="700"
+                       placeholder="Qəbul balınızı daxil edin" required>
+            </div>
+
+            <div class="section-title">03. Dil bilikləri</div>
+
+            <div class="form-group">
+                <label for="azerbaijani">Azərbaycan dili *</label>
+                <select id="azerbaijani" name="azerbaijani" required>
+                    <option value="">Səviyyə seçin</option>
+                    <option>Ana dili</option>
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="english">İngilis dili *</label>
+                <select id="english" name="english" required>
+                    <option value="">Səviyyə seçin</option>
+                    <option>Ana dili</option>
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="otherLanguages">Digər dillər</label>
+                <input id="otherLanguages" name="otherLanguages"
+                       type="text"
+                       placeholder="Məsələn: Rus dili – B2, Alman dili – A1">
+            </div>
+
+            <button type="submit">Qeydiyyatı tamamla →</button>
+
+            <div class="message" id="message">
+                Forma hazırdır. Məlumatların bazada saxlanılması
+                üçün Supabase bağlantısı növbəti mərhələdə əlavə olunacaq.
+            </div>
+
+        </form>
+    </div>
+
+    <div class="footer">
+        © 2026 SABAH.city | Bütün hüquqlar qorunur.
+    </div>
+
+</div>
+
+<script>
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    document.getElementById("message").style.display = "block";
+});
+</script>
+
+</body>
+</html>
